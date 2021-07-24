@@ -8,14 +8,13 @@ const THEME = 'theme';
 const refs ={
     switchButton: document.querySelector('.theme-switch__toggle'),
     body: document.querySelector('body'),
-    // marker: document.querySelector('.switch__marker'),
 }
 
 refs.body.classList.add(Theme.LIGHT);
 refs.switchButton.addEventListener('change', makeAction)
 
 
-
+// добавление темы по условию
 function makeAction(evt){
       
     if (!refs.body.classList.contains(Theme.DARK)){
@@ -31,18 +30,18 @@ function makeAction(evt){
     }
 }
 
-
+// если в локалСторидж есть тема - примени
 function populateSwitch(){
     const savedTheme = localStorage.getItem(THEME);
   
     if (savedTheme === Theme.DARK){
         refs.switchButton.checked = true
         refs.body.classList.add(Theme.DARK)
-        console.log(savedTheme)
+        // console.log(savedTheme)
     }else if(savedTheme !== Theme.DARK){
         refs.body.classList.add(Theme.LIGHT)
         refs.switchButton.checked = false
-        console.log(savedTheme)
+        // console.log(savedTheme)
     }        
 }
  populateSwitch();
@@ -61,15 +60,8 @@ function populateSwitch(){
 //     //     localStorage.setItem(THEME, Theme.LIGHT);
 //     // }
 // }
-// const p = localStorage.getItem('theme');
-// console.log(p)
 
-// function f(evt){
-//     if(p === Theme.DARK){
-        // refs.switchButton.checked = true;
-        // refs.body.classList.add(Theme.DARK);
-//     }
-// }
+
 
 // function onSwitchButtonItem(evt){
 //     const savedTheme = localStorage.getItem(THEME);
@@ -115,10 +107,6 @@ function populateSwitch(){
 //             refs.body.classList.replace(Theme.DARK, Theme.LIGHT);
 //         }   
 // }
-
-// сохранение того, что есть в локалСт и запись его в форму
-
-
 
 
 
