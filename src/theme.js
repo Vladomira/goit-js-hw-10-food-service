@@ -12,53 +12,100 @@ const refs ={
 }
 
 refs.body.classList.add(Theme.LIGHT);
-refs.switchButton.addEventListener('change', onSwitchButtonItem);
-refs.switchButton.addEventListener('change', checkB);
-refs.switchButton.addEventListener('change', makAction)
+// refs.switchButton.addEventListener('change', onSwitchButtonItem);
+// refs.switchButton.addEventListener('change', checkTheme);
+refs.switchButton.addEventListener('change', makeAction)
 
 
-function checkB(evt){
-    // const actionCheckB = evt.currentTarget;
-    // if (actionCheckB){
-    //    console.log( refs.switchButton.checked)
-    //    localStorage.setItem(THEME, Theme.DARK);
-    // }else if (!actionCheckB){
-    //     !refs.switchButton.checked
-    //     localStorage.setItem(THEME, Theme.LIGHT);
-    // }
-}
 
-function makAction(evt){
+
+
+function makeAction(evt){
+    const checkedAct =  refs.switchButton.checked 
     if (!refs.body.classList.contains(Theme.DARK)){
         localStorage.setItem(THEME, Theme.DARK);
         refs.body.classList.add(Theme.DARK);
+
+        checkedAct === true;
+        
     } else if (refs.body.classList.contains(Theme.DARK)){
         localStorage.setItem(THEME, Theme.LIGHT);
-        refs.body.classList.replace(Theme.DARK, Theme.LIGHT);
+        refs.body.classList.remove(Theme.DARK);
+        refs.body.classList.add( Theme.LIGHT);
+          
     }
+    console.log(checkedAct);
 }
 
-function onSwitchButtonItem(evt){
-    // const savedTheme = localStorage.getItem(THEME)
-    // const checkedAct =  refs.switchButton.checked 
-    // if(savedTheme === Theme.DARK){
-    //     refs.body.classList.add(Theme.DARK);
+
+function populateSwitch(){
+    const savedTheme = localStorage.getItem(THEME);
+    const checkedAct =  refs.switchButton.checked;
+
+    if (savedTheme === Theme.DARK){
+        checkedAct
+        refs.body.classList.add(Theme.DARK)
+    }else if(savedTheme !== Theme.DARK){
+        refs.body.classList.add(Theme.LIGHT)
+    }
+    
+    console.log(savedTheme)
+}
+ populateSwitch();
+
+
+
+
+// }
+
+// function checkB(evt){
+//     // const actionCheckB = evt.currentTarget;
+//     // if (actionCheckB){
+//     //    console.log( refs.switchButton.checked)
+//     //    localStorage.setItem(THEME, Theme.DARK);
+//     // }else if (!actionCheckB){
+//     //     !refs.switchButton.checked
+//     //     localStorage.setItem(THEME, Theme.LIGHT);
+//     // }
+// }
+// const p = localStorage.getItem('theme');
+// console.log(p)
+
+// function f(evt){
+//     if(p === Theme.DARK){
+        // refs.switchButton.checked = true;
+        // refs.body.classList.add(Theme.DARK);
+//     }
+// }
+
+// function onSwitchButtonItem(evt){
+//     const savedTheme = localStorage.getItem(THEME);
+//     const checkedAct =  refs.switchButton.checked 
+
+//     if(savedTheme === Theme.DARK){
+//         refs.body.classList.add(Theme.DARK);
      
-    //     // refs.switchButton.checked === true;
-    //     // checkedAct
-    //     // console.log(checkedAct);
-    // } else if (savedTheme === Theme.LIGHT){            
-    //         refs.body.classList.replace(Theme.DARK, Theme.LIGHT);
-    //         // !checkedAct
-    //         // console.log(!checkedAct)
-    //     }   
-}
+//         refs.switchButton.checked === true;
+//         // checkedAct
+//         console.log(checkedAct);
+//     } else if (savedTheme === Theme.LIGHT){            
+//             refs.body.classList.replace(Theme.DARK, Theme.LIGHT);
+//             !checkedAct
+//             console.log(!checkedAct)
+//         }   
+// }
 
 
 
 
 
-
+// function checkTheme(){
+// const p = localStorage.getItem('theme');
+// }
+    // if (p === Theme.DARK){
+    //     refs.switchButton.checked = true;
+    //     refs.body.classList.add(Theme.DARK);
+    // }
 
 
 
@@ -77,18 +124,7 @@ function onSwitchButtonItem(evt){
 // }
 
 // сохранение того, что есть в локалСт и запись его в форму
-// function populateSwitch(){
-    // const savedTheme = localStorage.getItem(THEME)
-    
-    // if (savedTheme === Theme.DARK){
-    //     refs.switchButton.checked === true
-    // }else if(savedTheme !== Theme.DARK){
-    //     refs.switchButton.checked !== true
-    // }
-    
-    // console.log(savedTheme)
-// }
-// refs.switchButton.addEventListener('change', populateSwitch);
+
 
 
 
