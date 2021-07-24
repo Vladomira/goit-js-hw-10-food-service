@@ -15,3 +15,5 @@ const cardDish = allCards(dishes);
 dishesList.insertAdjacentHTML('beforeend', cardDish);
 
 
+
+
