@@ -18,24 +18,24 @@ refs.switchButton.addEventListener('change', makAction)
 
 
 function checkB(evt){
-    // const actionCheckB = evt.currentTarget;
-    // if (actionCheckB){
-    //    console.log( refs.switchButton.checked)
-    //    localStorage.setItem(THEME, Theme.DARK);
-    // }else if (!actionCheckB){
-    //     !refs.switchButton.checked
-    //     localStorage.setItem(THEME, Theme.LIGHT);
-    // }
+    const actionCheckB = evt.currentTarget;
+    if (actionCheckB){
+       console.log( refs.switchButton.checked)
+       localStorage.setItem(THEME, Theme.DARK);
+    }else if (!actionCheckB){
+        !refs.switchButton.checked
+        localStorage.setItem(THEME, Theme.LIGHT);
+    }
 }
 
 function makAction(evt){
-    // if (!refs.body.classList.contains(Theme.DARK)){
-    //     localStorage.setItem(THEME, Theme.DARK);
-    //     refs.body.classList.add(Theme.DARK);
-    // } else if (refs.body.classList.contains(Theme.DARK)){
-    //     localStorage.setItem(THEME, Theme.LIGHT);
-    //     refs.body.classList.replace(Theme.DARK, Theme.LIGHT);
-    // }
+    if (!refs.body.classList.contains(Theme.DARK)){
+        localStorage.setItem(THEME, Theme.DARK);
+        refs.body.classList.add(Theme.DARK);
+    } else if (refs.body.classList.contains(Theme.DARK)){
+        localStorage.setItem(THEME, Theme.LIGHT);
+        refs.body.classList.replace(Theme.DARK, Theme.LIGHT);
+    }
 }
 
 function onSwitchButtonItem(evt){
@@ -53,6 +53,14 @@ function onSwitchButtonItem(evt){
             // console.log(!checkedAct)
         }   
 }
+
+
+
+
+
+
+
+
 
 
 

@@ -1,5 +1,5 @@
 import './sass/main.scss';
-import './theme'
+import './theme.js'
 // импорт массива блюд
 import dishes from './menu.json';
 // все карточки
