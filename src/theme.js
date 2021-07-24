@@ -12,51 +12,44 @@ const refs ={
 }
 
 refs.body.classList.add(Theme.LIGHT);
-// refs.switchButton.addEventListener('change', onSwitchButtonItem);
-// refs.switchButton.addEventListener('change', checkTheme);
 refs.switchButton.addEventListener('change', makeAction)
 
 
 
-
-
 function makeAction(evt){
-    const checkedAct =  refs.switchButton.checked 
+      
     if (!refs.body.classList.contains(Theme.DARK)){
         localStorage.setItem(THEME, Theme.DARK);
         refs.body.classList.add(Theme.DARK);
 
-        checkedAct === true;
+        refs.switchButton.checked  == true;
         
     } else if (refs.body.classList.contains(Theme.DARK)){
         localStorage.setItem(THEME, Theme.LIGHT);
         refs.body.classList.remove(Theme.DARK);
-        refs.body.classList.add( Theme.LIGHT);
-          
+        refs.body.classList.add( Theme.LIGHT);          
     }
-    console.log(checkedAct);
 }
 
 
 function populateSwitch(){
     const savedTheme = localStorage.getItem(THEME);
-    const checkedAct =  refs.switchButton.checked;
-
+  
     if (savedTheme === Theme.DARK){
-        checkedAct
+        refs.switchButton.checked = true
         refs.body.classList.add(Theme.DARK)
+        console.log(savedTheme)
     }else if(savedTheme !== Theme.DARK){
         refs.body.classList.add(Theme.LIGHT)
-    }
-    
-    console.log(savedTheme)
+        refs.switchButton.checked = false
+        console.log(savedTheme)
+    }        
 }
  populateSwitch();
 
 
 
 
-// }
 
 // function checkB(evt){
 //     // const actionCheckB = evt.currentTarget;
