@@ -18,14 +18,14 @@ refs.switchButton.addEventListener('change', makAction)
 
 
 function checkB(evt){
-    const actionCheckB = evt.currentTarget;
-    if (actionCheckB){
-       console.log( refs.switchButton.checked)
-       localStorage.setItem(THEME, Theme.DARK);
-    }else if (!actionCheckB){
-        !refs.switchButton.checked
-        localStorage.setItem(THEME, Theme.LIGHT);
-    }
+    // const actionCheckB = evt.currentTarget;
+    // if (actionCheckB){
+    //    console.log( refs.switchButton.checked)
+    //    localStorage.setItem(THEME, Theme.DARK);
+    // }else if (!actionCheckB){
+    //     !refs.switchButton.checked
+    //     localStorage.setItem(THEME, Theme.LIGHT);
+    // }
 }
 
 function makAction(evt){
@@ -39,19 +39,19 @@ function makAction(evt){
 }
 
 function onSwitchButtonItem(evt){
-    const savedTheme = localStorage.getItem(THEME)
-    const checkedAct =  refs.switchButton.checked 
-    if(savedTheme === Theme.DARK){
-        refs.body.classList.add(Theme.DARK);
+    // const savedTheme = localStorage.getItem(THEME)
+    // const checkedAct =  refs.switchButton.checked 
+    // if(savedTheme === Theme.DARK){
+    //     refs.body.classList.add(Theme.DARK);
      
-        // refs.switchButton.checked === true;
-        // checkedAct
-        // console.log(checkedAct);
-    } else if (savedTheme === Theme.LIGHT){            
-            refs.body.classList.replace(Theme.DARK, Theme.LIGHT);
-            // !checkedAct
-            // console.log(!checkedAct)
-        }   
+    //     // refs.switchButton.checked === true;
+    //     // checkedAct
+    //     // console.log(checkedAct);
+    // } else if (savedTheme === Theme.LIGHT){            
+    //         refs.body.classList.replace(Theme.DARK, Theme.LIGHT);
+    //         // !checkedAct
+    //         // console.log(!checkedAct)
+    //     }   
 }
 
 
@@ -63,7 +63,7 @@ function onSwitchButtonItem(evt){
 
 
 
-
+// ******
 // onTextareaInput получает значение и перезаписывает на новое
 // function onSwitchButtonItem(evt){
     
