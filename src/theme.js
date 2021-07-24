@@ -3,51 +3,100 @@ const Theme = {
     DARK: 'dark-theme',
   };
 
-
-const STORAGE_KEY = 'changed-position';
+const THEME = 'theme';
 
 const refs ={
     switchButton: document.querySelector('.theme-switch__toggle'),
     body: document.querySelector('body'),
+    // marker: document.querySelector('.switch__marker'),
 }
 
+refs.body.classList.add(Theme.LIGHT);
+refs.switchButton.addEventListener('change', onSwitchButtonItem);
+refs.switchButton.addEventListener('change', checkB);
+refs.switchButton.addEventListener('change', makAction)
 
-// refs.switchButton.addEventListener('change', onSwitchButtonItem);
-refs.switchButton.addEventListener('change', onSwitchButtonChange);
 
+function checkB(evt){
+    // const actionCheckB = evt.currentTarget;
+    // if (actionCheckB){
+    //    console.log( refs.switchButton.checked)
+    //    localStorage.setItem(THEME, Theme.DARK);
+    // }else if (!actionCheckB){
+    //     !refs.switchButton.checked
+    //     localStorage.setItem(THEME, Theme.LIGHT);
+    // }
+}
 
+function makAction(evt){
+    // if (!refs.body.classList.contains(Theme.DARK)){
+    //     localStorage.setItem(THEME, Theme.DARK);
+    //     refs.body.classList.add(Theme.DARK);
+    // } else if (refs.body.classList.contains(Theme.DARK)){
+    //     localStorage.setItem(THEME, Theme.LIGHT);
+    //     refs.body.classList.replace(Theme.DARK, Theme.LIGHT);
+    // }
+}
 
-function onSwitchButtonChange(){
-    const savedPosition = localStorage.getItem(STORAGE_KEY);
-   
-    if (savedPosition){
-        console.log(savedPosition)
-        refs.switchButton.value = savedPosition;
-  
+function onSwitchButtonItem(evt){
+    const savedTheme = localStorage.getItem(THEME)
+    const checkedAct =  refs.switchButton.checked 
+    if(savedTheme === Theme.DARK){
         refs.body.classList.add(Theme.DARK);
-    }
-  
+     
+        // refs.switchButton.checked === true;
+        // checkedAct
+        // console.log(checkedAct);
+    } else if (savedTheme === Theme.LIGHT){            
+            refs.body.classList.replace(Theme.DARK, Theme.LIGHT);
+            // !checkedAct
+            // console.log(!checkedAct)
+        }   
 }
 
 
 
-
+// onTextareaInput получает значение и перезаписывает на новое
 // function onSwitchButtonItem(evt){
-//     const position = evt.currentTarget.value;
-
-//     localStorage.setItem(STORAGE_KEY, position); 
-  
+    
+//     if(refs.switchButton.checked == true){
+//         localStorage.setItem(THEME, Theme.DARK);
+//         refs.body.classList.add(Theme.DARK);
+//     } else if (!refs.switchButton.checked == true){
+//             localStorage.setItem(THEME, Theme.LIGHT);
+//             refs.body.classList.replace(Theme.DARK, Theme.LIGHT);
+//         }   
 // }
 
-
-
-
-
-
-
-// *********сброс записи в форме
-// function dischargeValue(et){
-//     // et.target.reset();
-//     // localStorage.removeItem(STORAGE_KEY)
+// сохранение того, что есть в локалСт и запись его в форму
+// function populateSwitch(){
+    // const savedTheme = localStorage.getItem(THEME)
+    
+    // if (savedTheme === Theme.DARK){
+    //     refs.switchButton.checked === true
+    // }else if(savedTheme !== Theme.DARK){
+    //     refs.switchButton.checked !== true
+    // }
+    
+    // console.log(savedTheme)
 // }
-// refs.switchButton.addEventListener('change', dischargeValue);
+// refs.switchButton.addEventListener('change', populateSwitch);
+
+
+
+
+
+// function checkB(evt){
+//     const actionCheckB = evt.currentTarget;
+//     if(localStorage.getItem(THEME) === Theme.DARK){
+//         refs.switchButton.checked
+//         localStorage.setItem(THEME, Theme.DARK);
+//         refs.body.classList.add(Theme.DARK);
+//         console.log(refs.switchButton.checked)
+//     } else if(localStorage.getItem(THEME) === Theme.LIGHT){
+//         !refs.switchButton.checked
+//         localStorage.setItem(THEME, Theme.LIGHT);
+//         refs.body.classList.replace(Theme.LIGHT);
+//         console.log(refs.switchButton.check)
+//     }
+// }
